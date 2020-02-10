@@ -4,5 +4,5 @@ import Button from './Button';
 
 ReactDom.render(
   <Button></Button>,
-  document.body
+  document.getElementById('root')
 );
