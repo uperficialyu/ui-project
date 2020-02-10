@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import Button from './Button';
 
-
-// console.log('hello world4')
-// const div = document.createElement('div');
-// div.innerText = 'div2';
-// document.body.append(div);
-
-console.log(React);
-console.log(ReactDom);
+ReactDom.render(
+  <Button></Button>,
+  document.body
+);
