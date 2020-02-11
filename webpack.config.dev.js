@@ -4,7 +4,8 @@ module.exports = Object.assign({}, base, {
 	mode: 'development',
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: 'index.html'
+			template: 'index.html',
+			title: 'Emily-ui',
 		})
 	],
 })

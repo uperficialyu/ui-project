@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Button from './Button';
+import Icon from './Icon';
 
 ReactDom.render(
-  <Button></Button>,
+  <Icon name="hello"></Icon>,
   document.getElementById('root')
 );
