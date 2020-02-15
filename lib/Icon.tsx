@@ -1,20 +1,16 @@
 import React from 'react';
 import './importIcons'
-import wechart from './icons/wechat.svg';
-
-console.log(wechart)
 
 interface IconProps {
   name: string;
+  onClick: React.MouseEventHandler<SVGElement>;
 }
 
 const Icon: React.FunctionComponent<IconProps> = (props) => {
   return (
-    <span>
-      <svg>
-        <use xlinkHref={`#${props.name}`}/>
-      </svg>
-    </span>
+    <svg onClick={props.onClick}>
+      <use xlinkHref={`#${props.name}`}/>
+    </svg>
   );
 };
 
