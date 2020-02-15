@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Icon from './Icon';
+import './aa.scss'
 
 ReactDom.render(
   <div>
