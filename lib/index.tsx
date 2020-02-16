@@ -9,7 +9,11 @@ const hello: React.MouseEventHandler<Element> = (e) => {
 
 ReactDom.render(
   <div>
-    <Icon onClick={hello} name="wechat"/>
+    <Icon className="aa" onClick={hello}
+      onMouseEnter={() => console.log('enter')}
+      onMouseLeave={() => console.log('leave')}
+      onTouchStart={() => console.log('touch')}
+      name="wechat"/>
     {/* <Icon name="alipay"/>
     <Icon name="qq"/> */}
   </div>,
