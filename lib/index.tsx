@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Icon from './Icon';
-import './aa.scss'
+import Icon from './icon/Icon';
+import './icon/aa.scss'
 
 const hello: React.MouseEventHandler<Element> = (e) => {
   console.log('hello');
