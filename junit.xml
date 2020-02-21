@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="7" failures="0" time="8.338">
-  <testsuite name="classes" errors="0" failures="0" skipped="0" timestamp="2020-02-18T14:14:54" time="3.333" tests="5">
-    <testcase classname="classes 接受 1 个 className" name="classes 接受 1 个 className" time="0.002">
+<testsuites name="jest tests" tests="7" failures="0" time="8.489">
+  <testsuite name="classes" errors="0" failures="0" skipped="0" timestamp="2020-02-21T12:49:22" time="2.952" tests="5">
+    <testcase classname="classes 接受 1 个 className" name="classes 接受 1 个 className" time="0.003">
     </testcase>
     <testcase classname="classes 接受 2 个 className" name="classes 接受 2 个 className" time="0">
     </testcase>
-    <testcase classname="classes 接受 undefined 结果不会出现 undefined" name="classes 接受 undefined 结果不会出现 undefined" time="0">
+    <testcase classname="classes 接受 undefined 结果不会出现 undefined" name="classes 接受 undefined 结果不会出现 undefined" time="0.001">
     </testcase>
     <testcase classname="classes 接受各种奇怪值" name="classes 接受各种奇怪值" time="0.001">
     </testcase>
-    <testcase classname="classes 接受 0 个参数" name="classes 接受 0 个参数" time="0">
+    <testcase classname="classes 接受 0 个参数" name="classes 接受 0 个参数" time="0.001">
     </testcase>
   </testsuite>
-  <testsuite name="icon" errors="0" failures="0" skipped="0" timestamp="2020-02-18T14:14:54" time="3.423" tests="2">
-    <testcase classname="icon render successfully" name="icon render successfully" time="0.011">
+  <testsuite name="icon" errors="0" failures="0" skipped="0" timestamp="2020-02-21T12:49:22" time="3.057" tests="2">
+    <testcase classname="icon render successfully" name="icon render successfully" time="0.013">
     </testcase>
-    <testcase classname="icon onClick" name="icon onClick" time="0.03">
+    <testcase classname="icon onClick" name="icon onClick" time="0.046">
     </testcase>
   </testsuite>
 </testsuites>
