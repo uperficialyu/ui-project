@@ -5,8 +5,10 @@ function fun() {
   const [x, setX] = useState(false)
   return (
     <div>
-      <button onClick={() => setX(!x)}></button>
-      <Dialog visible={x} />
+      <button onClick={() => setX(!x)}>click</button>
+      <Dialog visible={x} >
+        <div>hhelo</div>
+      </Dialog>
     </div>
   )
 }
