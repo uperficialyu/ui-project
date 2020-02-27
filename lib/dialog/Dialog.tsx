@@ -16,7 +16,7 @@ const Dialog:React.FunctionComponent<Props> = (props) => {
     <Fragment>
       <div className={sc('mask')}></div>
       <div className={sc()}>
-        <div className={sc()}>
+        <div className={sc('close')}>
           <Icon name="close" />
         </div>
         <header className={sc('header')}>提示</header>
