@@ -1,9 +1,15 @@
 import React, { useState, Fragment } from 'react';
-import Dialog from './Dialog';
+import Dialog, { alert, confirm, modal } from './Dialog';
 
 function fun() {
   const [x, setX] = useState(false);
   const [y, setY] = useState(false);
+
+  const openModal = () => {
+    const close = modal(<h1>你好
+      <button onClick={() => close()}>close</button>
+    </h1>);
+  };
   return (
     <Fragment>
       <div>
@@ -39,6 +45,22 @@ function fun() {
         >
           <div>hhelo</div>
         </Dialog>
+      </div>
+
+      <div>
+        <h1>example 3</h1>
+        <button onClick={() => alert('1')}>alert</button>
+        <button onClick={() => confirm('1', () => {
+          console.log('你点击了yes');
+        }, () => {
+          console.log('你点击了no');
+        })}>confirm
+        </button>
+      </div>
+
+      <div>
+        <h1>example 4</h1>
+        <button onClick={openModal}>modal</button>
       </div>
     </Fragment>
   )
