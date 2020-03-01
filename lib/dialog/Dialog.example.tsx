@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from 'react';
 import Dialog, { alert, confirm, modal } from './Dialog';
 
-function fun() {
+function DialogExample() {
   const [x, setX] = useState(false);
   const [y, setY] = useState(false);
 
@@ -66,4 +66,4 @@ function fun() {
   )
 }
 
-export default fun;
+export default DialogExample;
