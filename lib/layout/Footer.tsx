@@ -1,17 +1,18 @@
-// import React, { ReactElement } from 'react';
+import React from 'react';
+import { scopedClassMaker } from '../helpers/classes';
 
-// interface Props extends React.HTMLAttributes<HTMLElement> {
-//   children: ReactElement | Array<ReactElement>
-// }
+interface Props extends React.HTMLAttributes<HTMLElement> {
+}
 
-// const Footer: React.FunctionComponent<Props> = (props) => {
-//   return (
-//     <div>
-//       {props.children}
-//     </div>
-//   );
+const sc = scopedClassMaker('emily-layout');
 
+const Footer: React.FunctionComponent<Props> = (props) => {
+  const { className, ...rest } = props;
+  return (
+    <div className={sc('footer', {extra: className})} {...rest}>
+      {props.children}
+    </div>
+  );
+};
 
-// };
-
-// export default Footer;
+export default Footer;

@@ -3,7 +3,7 @@ import { scopedClassMaker } from '../helpers/classes';
 import './layout.scss';
 
 
-const sc = scopedClassMaker('Emily-layout');
+const sc = scopedClassMaker('emily-layout');
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
   children: ReactElement | Array<ReactElement>
