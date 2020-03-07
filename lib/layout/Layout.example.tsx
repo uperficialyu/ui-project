@@ -5,15 +5,17 @@ import Content from './Content';
 import Footer from './Footer';
 import Aside from './Aside';
 
+import './layout.example.scss';
+
 const LayoutExample = () => {
   return (
     <Fragment>
       <div>
         <h1>第一个例子</h1>
-        <Layout style={{height: 500, width: 500}} className="hello">
+        <Layout style={{height: 500, width: 500}} className="hi">
           <Header className="x">header</Header>
           <Content className="y">content</Content>
-          <Footer className="z">footer</Footer>
+          <Footer className="x">footer</Footer>
         </Layout>
       </div>
 
