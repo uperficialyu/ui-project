@@ -13,14 +13,14 @@ const logo = require('./logo.png');
 ReactDOM.render(
   <Router>
     <Layout className="site-page">
-      <Header>
+      <Header className="site-header">
         <div className="logo">
           <img src={logo.default} width="48" height="48" alt=""/>
           <span> Emily-ui </span>
         </div>
       </Header>
       <Layout>
-        <Aside>
+        <Aside className="site-aside">
           <h2>组件</h2>
           <ul>
             <li><Link to="/icon">图标</Link></li>
@@ -29,14 +29,14 @@ ReactDOM.render(
             <li><Link to="/layout">布局</Link></li>
           </ul>
         </Aside>
-        <Content>
+        <Content className="site-main">
           <Route path="/icon" component={IconExample} />
           <Route path="/dialog" component={DialogExample} />
           <Route path="/layout" component={LayoutExample} />
         </Content>
       </Layout>
       <Footer className="site-footer">
-        &copy; 方应杭
+        &copy; Emily
       </Footer>
     </Layout>
   </Router>
