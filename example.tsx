@@ -7,6 +7,8 @@ import IconDemo from './lib/icon/Icon.demo';
 import DialogExample from './lib/dialog/Dialog.example';
 import LayoutExample from './lib/layout/Layout.example';
 import { Layout, Aside, Header, Content, Footer } from './lib/layout/Layout';
+import FormExample from './lib/form/Form.example';
+
 import './example.scss';
 
 const logo = require('./logo.png');
@@ -18,7 +20,7 @@ ReactDOM.render(
       <Header className="site-header">
         <div className="logo">
           <img src={logo.default} width="48" height="48" alt=""/>
-          <span> Emily-ui </span>
+          <span> Emily-Ui </span>
         </div>
       </Header>
       <Layout>
@@ -29,12 +31,24 @@ ReactDOM.render(
             <li><NavLink to="/button">按钮</NavLink></li>
             <li><NavLink to="/dialog">对话框</NavLink></li>
             <li><NavLink to="/layout">布局</NavLink></li>
+            <li><NavLink to="/form">表单</NavLink></li>
+
+
+            <li><NavLink to="/layout">选择器</NavLink></li>
+            <li><NavLink to="/layout">穿梭框</NavLink></li>
+            <li><NavLink to="/layout">时间选择框</NavLink></li>
+            <li><NavLink to="/layout">头像</NavLink></li>
+            <li><NavLink to="/layout">评论</NavLink></li>
+            <li><NavLink to="/layout">上传</NavLink></li>
+            <li><NavLink to="/layout">单选框</NavLink></li>
+            <li><NavLink to="/layout">输入框</NavLink></li>
           </ul>
         </Aside>
         <Content className="site-main">
           <Route path="/icon" component={IconDemo} />
           <Route path="/dialog" component={DialogExample} />
           <Route path="/layout" component={LayoutExample} />
+          <Route path="/form" component={FormExample} />
         </Content>
       </Layout>
       <Footer className="site-footer">
