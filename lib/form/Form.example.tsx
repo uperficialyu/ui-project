@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Form from './form';
+import Form from './Form';
 import { useState, Fragment } from 'react';
 // import Validator, {noError} from './validator';
 // import Button from '../button/button';
 
 const FormExample: React.FunctionComponent = () => {
-  const [formDate] = useState({
+  const [formDate, setFormDate] = useState({
     userName: '',
     password: ''
   });
@@ -14,6 +14,10 @@ const FormExample: React.FunctionComponent = () => {
     {name: 'username', label: '用户名', input: {type: 'text'}},
     {name: 'image', label: '头像', input: {type: 'text'}},
   ]);
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log(formDate)
+  }
 
   return (
     <Fragment>
@@ -24,6 +28,8 @@ const FormExample: React.FunctionComponent = () => {
             <button>返回</button>
           </Fragment>
         }
+        onChange={setFormDate}
+        onSubmit={onSubmit}
       />
     </Fragment>
   )
