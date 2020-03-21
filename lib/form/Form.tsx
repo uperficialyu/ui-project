@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface FormValue {
+export interface FormValue {
   [K: string]: any
 }
 
@@ -18,15 +18,20 @@ const Form: React.FunctionComponent<Props> = (props) => {
     e.preventDefault();
     props.onSubmit(e);
   }
-  const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
-    console.log(e.target.value);
-  }
+  const onInputChange = (name: string, value: string) => {
+    const newFormValue = {...formData, [name]: value};
+    props.onChange(newFormValue);
+  };
   return (
     <form onSubmit={onSubmit}>
       {props.fields.map(f=>
-        <div>
+        <div key={f.name}>
           {f.label}
-          <input value={formData[f.name]} type={f.input.type} onChange={onInputChange}/>
+          <input
+            value={formData[f.name]}
+            type={f.input.type}
+            onChange={(e) => onInputChange(f.name, e.target.value)}
+          />
         </div>
       )}
       <div>
