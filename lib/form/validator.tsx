@@ -15,6 +15,10 @@ function isEmpty(value: any) {
   return value === undefined || value === null || value === '';
 }
 
+export function noError(errors: any) {
+  return Object.keys(errors).length === 0;
+}
+
 interface FormErrors {
   [K: string]: string[];
 }
