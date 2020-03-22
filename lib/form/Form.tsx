@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Input from '../input/input';
+import './form.scss';
 
 export interface FormValue {
   [K: string]: any
@@ -25,19 +26,23 @@ const Form: React.FunctionComponent<Props> = (props) => {
   };
   return (
     <form onSubmit={onSubmit}>
-      {props.fields.map(f=>
-        <div key={f.name}>
-          {f.label}
-          <Input
-            value={formData[f.name]}
-            type={f.input.type}
-            onChange={(e) => onInputChange(f.name, e.target.value)}
-          />
+      <table>
+        {props.fields.map(f=>
+          <tr key={f.name}>
+            <td>{f.label}</td>
+            <td>
+              <Input
+                value={formData[f.name]}
+                type={f.input.type}
+                onChange={(e) => onInputChange(f.name, e.target.value)}
+              />
+            </td>
+          </tr>
+        )}
+        <div>
+          {props.buttons}
         </div>
-      )}
-      <div>
-        {props.buttons}
-      </div>
+      </table>
     </form>
   )
 };
