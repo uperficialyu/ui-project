@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Form, { FormValue } from './Form';
 import { useState, Fragment } from 'react';
+import Validator from './validator';
 // import Validator, {noError} from './validator';
 // import Button from '../button/button';
 
@@ -16,6 +17,12 @@ const FormExample: React.FunctionComponent = () => {
   ]);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const rules = [
+      {key: 'username', required: true},
+      {key: 'username', minLength: 8, maxLength: 16},
+    ];
+    const errors = Validator(formDate, rules);
+    console.log(errors);
     console.log(formDate)
   }
 
