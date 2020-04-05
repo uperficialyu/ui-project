@@ -1,5 +1,13 @@
+/*
+ * TODO:
+ * 1. 支持子字段编辑（子表单）
+ * 2. 支持更多的 type / 自定义的 input
+ * 3. 支持手机端
+ */
 import * as React from 'react';
-import Input from '../input/input';
+import {ReactFragment} from 'react';
+import Input from '../input/Input';
+import classes from '../helpers/classes';
 import './form.scss';
 
 export interface FormValue {
@@ -8,43 +16,71 @@ export interface FormValue {
 
 interface Props {
   value: FormValue;
-  fields: Array<{name: string, label: string, input: {type: string}}>;
-  buttons: React.ReactFragment;
+  fields: Array<{ name: string, label: string, input: { type: string } }>;
+  buttons: ReactFragment;
   onSubmit: React.FormEventHandler<HTMLFormElement>;
   onChange: (value: FormValue) => void;
+  errors: { [K: string]: string[] };
+  errorsDisplayMode?: 'first' | 'all';
+  transformError?: (message: string) => string;
 }
 
 const Form: React.FunctionComponent<Props> = (props) => {
   const formData = props.value;
-  const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) =>{
+  const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     props.onSubmit(e);
-  }
+  };
   const onInputChange = (name: string, value: string) => {
     const newFormValue = {...formData, [name]: value};
     props.onChange(newFormValue);
   };
+  const transformError = (message: string) => {
+    const map: any = {
+      required: '必填',
+      minLength: '太短',
+      maxLength: '太长',
+    };
+    return props.transformError && props.transformError(message) || map[message] || '未知错误';
+  };
   return (
     <form onSubmit={onSubmit}>
-      <table>
-        {props.fields.map(f=>
-          <tr key={f.name}>
-            <td>{f.label}</td>
-            <td>
-              <Input
-                value={formData[f.name]}
-                type={f.input.type}
-                onChange={(e) => onInputChange(f.name, e.target.value)}
+      <table className="emily-form-table">
+        <tbody>
+        {props.fields.map(f =>
+          <tr className={classes('emily-form-tr')} key={f.name}>
+            <td className="fuemilyi-form-td">
+              <span className="emily-form-label">{f.label}</span>
+            </td>
+            <td className="emily-form-td">
+              <Input className="emily-form-input"
+                     type={f.input.type}
+                     value={formData[f.name]}
+                     onChange={(e) => onInputChange(f.name, e.target.value)}
               />
+              <div className="emily-form-error">{
+                props.errors[f.name] ?
+                  (props.errorsDisplayMode === 'first' ?
+                    transformError!(props.errors[f.name][0]) : props.errors[f.name].map(transformError!).join()) :
+                  <span>&nbsp;</span>
+              } </div>
             </td>
           </tr>
         )}
-        <div>
-          {props.buttons}
-        </div>
+        <tr className="emily-form-tr">
+          <td className="emily-form-td"/>
+          <td className="emily-form-td">
+            {props.buttons}
+          </td>
+        </tr>
+        </tbody>
       </table>
     </form>
-  )
+  );
+};
+
+Form.defaultProps = {
+  errorsDisplayMode: 'first',
 };
 
 export default Form;
