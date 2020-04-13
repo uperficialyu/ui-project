@@ -9,6 +9,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 const Scroll: React.FunctionComponent<Props> = (props) => {
   const { children, ...rest } = props;
   const [barHeight, setBarHeight] = useState(0);
+  const [barTop, setBarTop] = useState(0);
 
   const onScroll: UIEventHandler = (e) => {
     // const scrollHeight = e.currentTarget.scrollHeight;
@@ -17,11 +18,11 @@ const Scroll: React.FunctionComponent<Props> = (props) => {
 
     console.log(e)
     // setBarVisible(true);
-    // const { current } = containerRef;
-    // const scrollHeight = current!.scrollHeight;
-    // const viewHeight = current!.getBoundingClientRect().height;
-    // const scrollTop = current!.scrollTop;
-    // setBarTop(scrollTop * viewHeight / scrollHeight);
+    const { current } = containerRef;
+    const scrollHeight = current!.scrollHeight;
+    const viewHeight = current!.getBoundingClientRect().height;
+    const scrollTop = current!.scrollTop;
+    setBarTop(scrollTop * viewHeight / scrollHeight);
     // if (timerIdRef.current !== null) {
     //   window.clearTimeout(timerIdRef.current!);
     // }
@@ -51,8 +52,8 @@ const Scroll: React.FunctionComponent<Props> = (props) => {
       </div>
       <div className="emily-scroll-track">
         <div className="emily-scroll-bar" 
-          style={{ height: barHeight }}
-          // style={{height: barHeight, transform: `translateY(${barTop}px)`}}
+          // style={{ height: barHeight }}
+          style={{height: barHeight, transform: `translateY(${barTop}px)`}}
           // onMouseDown={onMouseDownBar}
         />
       </div>
