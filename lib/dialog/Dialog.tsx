@@ -1,8 +1,9 @@
 import React, { Fragment, ReactElement, ReactNode } from 'react';
 import { Icon } from '../index';
 import { scopedClassMaker } from '../helpers/classes';
-import './dialog.scss';
 import ReactDOM from 'react-dom';
+import Button from '../button/Button';
+import './dialog.scss';
 
 interface Props {
   visible: boolean;
@@ -88,8 +89,8 @@ const confirm = (content: string, yes?: () => void, no?: () => void) => {
     no && no();
   };
   const buttons = [
-    <button onClick={onYes}>yes</button>,
-    <button onClick={onNo}>no</button>
+    <Button onClick={onYes}>yes</Button>,
+    <Button onClick={onNo}>no</Button>
   ];
   const close = modal(content, buttons, no);
 };

@@ -3,7 +3,7 @@
 .emily-dialog {
   position: fixed;
   background: white;
-  min-width: 20em;
+  min-width: 35em;
   z-index: 2;
   border-radius: 4px;
   top: 50%;
@@ -20,23 +20,23 @@
   &-header {
     font-size: 22px;
     padding: 8px 16px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #f0f0f0;
   }
   &-main {
     padding: 8px 16px;
-    min-height: 6em;
+    min-height: 15em;
   }
   &-footer {
     padding: 8px 16px;
-    border-top: 1px solid grey;
+    border-top: 1px solid #f0f0f0;
     display: flex;
     justify-content: flex-end;
   }
   &-close {
     position: absolute;
-    bottom: 100%;
-    left: 100%;
-    background: $main-color;
+    bottom: 93%;
+    left: 95%;
+    // background: $main-color;
     width: 2em;
     height: 2em;
     border-radius: 50%;
@@ -45,5 +45,8 @@
     justify-content: center;
     align-items: center;
     color: white;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

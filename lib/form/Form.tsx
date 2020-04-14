@@ -49,7 +49,7 @@ const Form: React.FunctionComponent<Props> = (props) => {
         <tbody>
         {props.fields.map(f =>
           <tr className={classes('emily-form-tr')} key={f.name}>
-            <td className="fuemilyi-form-td">
+            <td className="emily-form-td">
               <span className="emily-form-label">{f.label}</span>
             </td>
             <td className="emily-form-td">
